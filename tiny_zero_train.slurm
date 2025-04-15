@@ -4,11 +4,12 @@
 #SBATCH --error=logs/%x_%j.err
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
-#SBATCH --gres=gpu:1         # Adjust to the number of GPUs you need
-#SBATCH --cpus-per-task=4    # Adjust CPU per GPU requirement
-#SBATCH --mem=32G            # Memory requirement
-#SBATCH --time=12:00:00      # Max time (hh:mm:ss)
-#SBATCH --partition=gpu      # Or whatever partition your cluster uses
+#SBATCH --ntasks-per-node=1   
+#SBATCH --gres=gpu:a100:1           # Adjust to the number of GPUs you need
+#SBATCH --cpus-per-task=4           # Adjust CPU per GPU requirement
+#SBATCH --mem=80G                   # Memory requirement
+#SBATCH --time=10:00:00             # Max time (hh:mm:ss)
+#SBATCH --partition=gpu             # Or whatever partition your cluster uses
 
 # Load modules or conda
 module load cuda/12.1
