@@ -12,14 +12,15 @@
 #SBATCH --partition=gpu             # Or whatever partition your cluster uses
 
 # Load modules or conda
-module load cuda/12.1
-source ~/miniconda3/etc/profile.d/conda.sh
+module load CUDA/12.1
+source ~/.bashrc
+#source ~/miniconda3/etc/profile.d/conda.sh
 conda activate zero
 
 # Your environment variables
 export N_GPUS=1
-export BASE_MODEL=/path/to/your/model
-export DATA_DIR=/path/to/your/dataset
+export BASE_MODEL=/scratch/user/trishabh1999/projects/TinyZero/models/qwen2.5-0.5b
+export DATA_DIR=/scratch/user/trishabh1999/projects/TinyZero/data/countdown
 export ROLLOUT_TP_SIZE=1
 export EXPERIMENT_NAME=countdown-qwen2.5-0.5b
 export VLLM_ATTENTION_BACKEND=XFORMERS
