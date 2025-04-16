@@ -1,7 +1,6 @@
 #!/bin/bash
 #SBATCH --job-name=tiny-zero-train
-#SBATCH --output=logs/%x_%j.out
-#SBATCH --error=logs/%x_%j.err
+#SBATCH --output=logs/%x_%j.log
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --ntasks-per-node=1   
