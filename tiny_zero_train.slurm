@@ -18,13 +18,16 @@ conda activate zero
 
 # environment variables
 export N_GPUS=1
-export BASE_MODEL=/scratch/user/trishabh1999/projects/TinyZero/models/qwen2.5-0.5b
-export DATA_DIR=/scratch/user/trishabh1999/projects/TinyZero/data/countdown
+export BASE_MODEL=/scratch/user/grace.harris/zerodir/TinyZero/models/qwen2.5-0.5b
+export DATA_DIR=/scratch/user/grace.harris/zerodir/TinyZero/data/countdown
+#export BASE_MODEL=/scratch/user/trishabh1999/projects/TinyZero/models/qwen2.5-0.5b
+#export DATA_DIR=/scratch/user/trishabh1999/projects/TinyZero/data/countdown
 export ROLLOUT_TP_SIZE=1
 export EXPERIMENT_NAME=countdown-qwen2.5-0.5b
 export VLLM_ATTENTION_BACKEND=XFORMERS
 # for weights and biases logging, also setting it offline as compute node have no internet
-export WANDB_API_KEY=991a69738a190c351e1906881719e2fc9f6a1537
+export WANDB_API_KEY=e3ec1086d17fcd30cb51a04db8da265a1646813f #group key
+#export WANDB_API_KEY=991a69738a190c351e1906881719e2fc9f6a1537
 export WANDB_MODE=offline
 
 # Create log dir if not exists
