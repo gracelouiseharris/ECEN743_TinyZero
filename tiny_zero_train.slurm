@@ -17,6 +17,7 @@ source ~/.bashrc
 conda activate zero
 
 # environment variables
+export PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True
 export N_GPUS=1
 export BASE_MODEL=/scratch/user/grace.harris/zerodir/TinyZero/models/qwen2.5-0.5b
 export DATA_DIR=/scratch/user/grace.harris/zerodir/TinyZero/data/countdown

@@ -6,7 +6,7 @@
 #SBATCH --ntasks-per-node=1   
 #SBATCH --gres=gpu:a100:2           # Adjust to the number of GPUs you need
 #SBATCH --cpus-per-task=8           # Adjust CPU per GPU requirement
-#SBATCH --mem=80G                   # Memory requirement
+#SBATCH --mem=120G                   # Memory requirement
 #SBATCH --time=10:00:00             # Max time (hh:mm:ss)
 #SBATCH --partition=gpu             # Or whatever partition your cluster uses
 
@@ -18,12 +18,12 @@ conda activate zero
 
 # environment variables
 export N_GPUS=2
-export BASE_MODEL=/scratch/user/grace.harris/zerodir/TinyZero/models/qwen2.5-3b
-export DATA_DIR=/scratch/user/grace.harris/zerodir/TinyZero/data/countdown
-#export BASE_MODEL=/scratch/user/trishabh1999/projects/TinyZero/models/qwen2.5-3b
+export BASE_MODEL=/scratch/user/grace.harris/zerodir/TinyZero/models/qwen2.5-1.5b
+export DATA_DIR=/scratch/user/grace.harris/zerodir/TinyZero/data/gsm8k
+#export BASE_MODEL=/scratch/user/trishabh1999/projects/TinyZero/models/qwen2.5-1.5b
 #export DATA_DIR=/scratch/user/trishabh1999/projects/TinyZero/data/countdown
 export ROLLOUT_TP_SIZE=2
-export EXPERIMENT_NAME=countdown-qwen2.5-3b
+export EXPERIMENT_NAME=gsm8k-qwen2.5-1.5b
 export VLLM_ATTENTION_BACKEND=XFORMERS
 # for weights and biases logging, also setting it offline as compute node have no internet
 export WANDB_API_KEY=e3ec1086d17fcd30cb51a04db8da265a1646813f #group key
@@ -34,4 +34,4 @@ export WANDB_MODE=offline
 mkdir -p logs
 
 # Run your training script
-bash ./scripts/train_tiny_zero_Qwen3B.sh
+bash ./scripts/train_tiny_zero_Qwen1_5B.sh

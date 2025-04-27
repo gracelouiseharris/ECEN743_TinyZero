@@ -18,10 +18,10 @@ conda activate zero
 
 # environment variables
 export N_GPUS=2
-#export BASE_MODEL=/scratch/user/grace.harris/zerodir/TinyZero/models/qwen2.5-3b
-#export DATA_DIR=/scratch/user/grace.harris/zerodir/TinyZero/data/countdown
-export BASE_MODEL=/scratch/user/trishabh1999/projects/TinyZero/models/qwen2.5-1.5b
-export DATA_DIR=/scratch/user/trishabh1999/projects/TinyZero/data/countdown
+export BASE_MODEL=/scratch/user/grace.harris/zerodir/TinyZero/models/qwen2.5-1.5b
+export DATA_DIR=/scratch/user/grace.harris/zerodir/TinyZero/data/countdown
+#export BASE_MODEL=/scratch/user/trishabh1999/projects/TinyZero/models/qwen2.5-1.5b
+#export DATA_DIR=/scratch/user/trishabh1999/projects/TinyZero/data/countdown
 export ROLLOUT_TP_SIZE=2
 export EXPERIMENT_NAME=countdown-qwen2.5-1.5b
 export VLLM_ATTENTION_BACKEND=XFORMERS
